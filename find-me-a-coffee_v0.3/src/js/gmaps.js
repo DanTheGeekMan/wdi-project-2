@@ -17,7 +17,7 @@
 
     this.infowindow = new google.maps.InfoWindow();
 
-    var service = new google.maps.places.PlacesService(this.map); 
+    var service = new google.maps.places.PlacesService(this.map);
     service.nearbySearch({
       location: pyrmont,
       radius: 5000,
@@ -42,7 +42,8 @@
 
     google.maps.event.addListener(marker, 'click', () => {
       globals.App.infowindow.setContent(place.name);
-      globals.App.infowindow.open(globals.App.map, this);
+      globals.App.infowindow.open(globals.App.map, marker);
+
     });
   };
 
