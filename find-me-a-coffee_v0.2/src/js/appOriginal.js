@@ -140,4 +140,4 @@
 //   return window.localStorage.clear();
 // };
 //
-// // $(App.init.bind(App));
+// $(App.init.bind(App));

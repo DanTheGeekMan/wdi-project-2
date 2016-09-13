@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+}
+
+#map-canvas {
+  width: 100%;
+  height: 90vh;
+  margin: 0 auto;
+}
+
+#wrapper { position: relative; }
+
+#over_map { position: absolute; top: 10px; left: 10px; z-index: 99; }

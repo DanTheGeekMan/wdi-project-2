@@ -1,0 +1,21 @@
+{
+  "name": "find-me-a-coffee",
+  "description": "A lesson to encrypt passwords with bcrypt and mongoose.",
+  "main": "app.js",
+  "authors": [
+    "DanTheGeekMan <danthegeekman@googlemail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/DanTheGeekMan/wdi-project-2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "bootstrap": "v4.0.0-alpha.4"
+  }
+}
