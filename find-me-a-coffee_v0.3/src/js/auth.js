@@ -22,6 +22,7 @@
   globals.App.loggedInState = function(){
     $(".loggedOut").hide();
     $(".loggedIn").show();
+    this.$main.html(``);
   };
 
   globals.App.loggedOutState = function(){
