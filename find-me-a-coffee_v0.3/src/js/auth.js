@@ -5,14 +5,12 @@
 
   globals.App.initAuth = function(){
     this.apiUrl = "http://localhost:3000/api";
-    this.$header  = $("header");
-    App.$nav     = $("nav");
-    console.log(this);
-    $(".register").on("click", this.register.bind(this));
+    this.$main = $('main');
+
+    $(".register"). on("click", this.register.bind(this));
     $(".login").on("click", this.login.bind(this));
     $(".logout").on("click", this.logout.bind(this));
-    $(".usersIndex").on("click", this.usersIndex.bind(this));
-    this.$header.on("submit", "form", this.handleForm);
+    this.$main.on("submit", "form", this.handleForm);
 
     if (this.getToken()) {
       this.loggedInState();
@@ -24,44 +22,63 @@
   globals.App.loggedInState = function(){
     $(".loggedOut").hide();
     $(".loggedIn").show();
-
-
-    //this.usersIndex();
   };
 
   globals.App.loggedOutState = function(){
     $(".loggedOut").show();
     $(".loggedIn").hide();
-    //this.register();
   };
+
+  // globals.App.register = function() {
+  //   if (event) event.preventDefault();
+  //   this.$header.html(`
+  //     <div class='formDial'>
+  //       <form method="post" action="/register">
+  //         <div class="form-group">
+  //           <input class="form-control" type="text" name="user[username]" placeholder="Username">
+  //         </div>
+  //         <div class="form-group">
+  //           <input class="form-control" type="email" name="user[email]" placeholder="Email">
+  //         </div>
+  //         <div class="form-group">
+  //           <input class="form-control" type="password" name="user[password]" placeholder="Password">
+  //         </div>
+  //         <div class="form-group">
+  //           <input class="form-control" type="password" name="user[passwordConfirmation]" placeholder="Password Confirmation">
+  //         </div>
+  //         <input class="btn btn-primary" type="submit" value="Register">
+  //       </form>
+  //     </div>
+  //   `);
+  // };
 
   globals.App.register = function() {
     if (event) event.preventDefault();
-    this.$header.html(`
-      <h2>Register</h2>
-      <form method="post" action="/register">
-        <div class="form-group">
-          <input class="form-control" type="text" name="user[username]" placeholder="Username">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="email" name="user[email]" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="password" name="user[password]" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="password" name="user[passwordConfirmation]" placeholder="Password Confirmation">
-        </div>
-        <input class="btn btn-primary" type="submit" value="Register">
-      </form>
+    this.$main.html(`
+      <div class='formDial'>
+        <form method="post" action="/register">
+          <div class="form-group">
+            <input class="form-control" type="text" name="user[username]" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="email" name="user[email]" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" name="user[password]" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" name="user[passwordConfirmation]" placeholder="Password Confirmation">
+          </div>
+          <input class="btn btn-primary" type="submit" value="Register">
+        </form>
+      </div>
     `);
   };
 
   globals.App.login = function() {
     event.preventDefault();
-    this.$header.html(`
-      <div class='loginDial'>
-        <h2>Login</h2>
+    this.$main.html(`
+      <div class='formDial'>
         <form method="post" action="/login">
           <div class="form-group">
             <input class="form-control" type="email" name="email" placeholder="Email">
@@ -116,15 +133,7 @@
     return globals.App.ajaxRequest(url, method, data, (data) => {
       if (data.token) globals.App.setToken(data.token);
       globals.App.loggedInState();
-      $('.loginDial').hide();
-      console.log(App.$nav);
-      App.$nav.html(`
-          <ul>
-            <a class='loggedOut register' href='#'>Register</a>
-            <a class='loggedOut login'    href='#'>Login</a>
-            <a class='loggedIn  logout'   href='#'>Logout</a>
-          </ul>
-      `);
+
     });
   };
 
