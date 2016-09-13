@@ -4,6 +4,8 @@
 
 User login 'WDI Yearbook'
 `/Users/user/development/WDI_LDN_22_CLASSWORK/w05d03/api-login-site-bootstrap/solution-code`
+Earlier version of yearbook.  Again not 100% functional.
+`/Users/user/development/WDI_LDN_22_CLASSWORK/w05d03/jwt-client-side/workingCopy`
 
 Populate map using JS API 'Miriam's Example'
 ` ~/Desktop/wdi-project-2/googlePlaceThingOriginal.html`

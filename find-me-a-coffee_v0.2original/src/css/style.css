@@ -1,0 +1,21 @@
+.navbar {
+  margin: 0 0 30px;
+}
+
+.nav {
+  float: right;
+}
+
+nav button {
+  float: right;
+}
+
+@media(max-width:34em) {
+  nav {
+    position: relative;
+  }
+
+  .nav {
+    width: 100%;
+  }
+}
