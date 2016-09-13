@@ -6,6 +6,7 @@
   globals.App.initAuth = function(){
     this.apiUrl = "http://localhost:3000/api";
     this.$header  = $("header");
+    App.$nav     = $("nav");
     console.log(this);
     $(".register").on("click", this.register.bind(this));
     $(".login").on("click", this.login.bind(this));
@@ -23,13 +24,15 @@
   globals.App.loggedInState = function(){
     $(".loggedOut").hide();
     $(".loggedIn").show();
+
+
     //this.usersIndex();
   };
 
   globals.App.loggedOutState = function(){
     $(".loggedOut").show();
     $(".loggedIn").hide();
-    this.register();
+    //this.register();
   };
 
   globals.App.register = function() {
@@ -57,16 +60,18 @@
   globals.App.login = function() {
     event.preventDefault();
     this.$header.html(`
-      <h2>Login</h2>
-      <form method="post" action="/login">
-        <div class="form-group">
-          <input class="form-control" type="email" name="email" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="password" name="password" placeholder="Password">
-        </div>
-        <input class="btn btn-primary" type="submit" value="Login">
-      </form>
+      <div class='loginDial'>
+        <h2>Login</h2>
+        <form method="post" action="/login">
+          <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="Password">
+          </div>
+          <input class="btn btn-primary" type="submit" value="Login">
+        </form>
+      </div>
     `);
   };
 
@@ -111,6 +116,15 @@
     return globals.App.ajaxRequest(url, method, data, (data) => {
       if (data.token) globals.App.setToken(data.token);
       globals.App.loggedInState();
+      $('.loginDial').hide();
+      console.log(App.$nav);
+      App.$nav.html(`
+          <ul>
+            <a class='loggedOut register' href='#'>Register</a>
+            <a class='loggedOut login'    href='#'>Login</a>
+            <a class='loggedIn  logout'   href='#'>Logout</a>
+          </ul>
+      `);
     });
   };
 
