@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <!-- <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap --> -->
+  <!-- <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>-->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script> -->
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5H0Rx_xq2rUKeMyr5fGyDYVBcJyZIIDg" charset="utf-8"></script> -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5H0Rx_xq2rUKeMyr5fGyDYVBcJyZIIDg&libraries=places"></script>
@@ -19,6 +19,10 @@
     </div>
 
     <div id="over_map">
+      <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Launch demo modal
+    </button>
       <header>
         <nav class="navbar navbar-light bg-faded">
               <div class="container">
@@ -44,10 +48,6 @@
       <main class="container"></main>
     </div>
   </div>
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -69,6 +69,18 @@
     </div>
   </div>
 </div>
-
+<p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-block">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
 </body>
 </html>
