@@ -75,10 +75,12 @@
     event.preventDefault();
     this.removeToken();
     this.loggedOutState();
+    $('#myModal').modal('hide');
   };
 
   globals.App.handleForm = function(){
     event.preventDefault();
+    $('#myModal').modal('hide');
 
     let url    = `${globals.App.apiUrl}${$(this).attr("action")}`;
     let method = $(this).attr("method");
