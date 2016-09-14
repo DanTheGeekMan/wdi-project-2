@@ -6,6 +6,7 @@
   globals.App.initMap = function() {
     $('.location').on('click', this.getCurrentLocation.bind(this));
     var startingPoint = {lat: 51.5153485, lng: -0.0746975};
+    // var startingPoint = {lat: 51.8910852, lng: -0.4981471};
     let canvas  = document.getElementById('map-canvas');
 
     this.map = new google.maps.Map(canvas, {
@@ -88,29 +89,6 @@
         globals.App.infowindow.open(globals.App.map, marker);
       });
     });
-
-    // google.maps.event.addListener(marker, 'click', () => {
-    //   let url = `http://localhost:3000/api/coffee/${place.place_id}`;
-    //   globals.App.ajaxRequest(url, "GET", null, (data) => {
-    //     let shop = data.json.result;
-    //     let open_now = shop.opening_hours.open_now;
-    //     let openStatus = "";
-    //     if (open_now) {
-    //       openStatus = 'Now open';
-    //     } else {
-    //       openStatus = 'Now closed';
-    //     }
-    //
-    //     globals.App.infowindow.setContent(`<div><h3>${shop.name}</h3><br>
-    //       <h4>${openStatus}</h4><br>
-    //       ${shop.reviews[0].author_name} says<br>\"${shop.reviews[0].text}\"<br><br>
-    //       ${shop.formatted_address}<br>
-    //       ${shop.formatted_phone_number}<br>
-    //
-    //       <a href="${shop.website}">Website</a></div>`);
-    //     globals.App.infowindow.open(globals.App.map, marker);
-    //   });
-    // });
   };
 
 })(window);

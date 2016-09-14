@@ -10,6 +10,7 @@
     $(".register"). on("click", this.register.bind(this));
     $(".login").on("click", this.login.bind(this));
     $(".logout").on("click", this.logout.bind(this));
+    $(".starbucks").on("click", this.starbucks.bind(this));
     this.$main.on("submit", "form", this.handleForm);
 
     if (this.getToken()) {
@@ -67,6 +68,15 @@
           </div>
           <input class="btn btn-primary" type="submit" value="Login">
         </form>
+      </div>
+    `);
+  };
+
+  globals.App.starbucks = function() {
+    event.preventDefault();
+    this.$main.html(`
+      <div class=''>
+        <h1>I think this would be a test</h1>
       </div>
     `);
   };
