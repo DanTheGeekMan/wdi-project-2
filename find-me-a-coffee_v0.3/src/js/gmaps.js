@@ -4,6 +4,13 @@
   if (!("App" in globals)) { globals.App = {}; }
 
   globals.App.initMap = function() {
+    // Logos
+    const costaLogo   = `http://forgeshopping.com/userfiles/images/stores/food-drink/cost-logo.png`;
+
+    // Markers
+    const costaMarker = 'http://www.costa.co.uk/img/store_locator/pins/costa_shadow.png';
+
+
     $('.location').on('click', this.getCurrentLocation.bind(this));
     var startingPoint = {lat: 51.5153485, lng: -0.0746975};
     // var startingPoint = {lat: 51.8910852, lng: -0.4981471};
@@ -63,7 +70,7 @@
       position: place.geometry.location,
       icon: {
         url: '../images/8106_new_new.png',
-        scaledSize: new google.maps.Size(40, 40)
+        scaledSize: new google.maps.Size(30, 30)
       }
     });
 

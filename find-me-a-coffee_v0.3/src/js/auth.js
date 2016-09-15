@@ -6,11 +6,14 @@
   globals.App.initAuth = function(){
     this.apiUrl = "http://localhost:3000/api";
     this.$main = $('main');
+    $(".modal-body").hide();
 
     $(".register"). on("click", this.register.bind(this));
     $(".login").on("click", this.login.bind(this));
     $(".logout").on("click", this.logout.bind(this));
-    $(".starbucks").on("click", this.starbucks.bind(this));
+    $(".chains").on("click", this.chains.bind(this));
+    // $(".chains").on("click", globals.chains).attr('id') ;
+
     this.$main.on("submit", "form", this.handleForm);
 
     if (this.getToken()) {
@@ -33,6 +36,7 @@
 
   globals.App.register = function() {
     $('#myModal').modal();
+    $(".modal-body").show();
     if (event) event.preventDefault();
     this.$main.html(`
       <div class='formDial'>
@@ -56,6 +60,7 @@
   };
 
   globals.App.login = function() {
+    $(".modal-body").show();
     event.preventDefault();
     this.$main.html(`
       <div class='formDial'>
@@ -72,8 +77,10 @@
     `);
   };
 
-  globals.App.starbucks = function() {
+  globals.App.chains = function() {
     event.preventDefault();
+    console.log(this);
+    $(".modal-body").show();
     this.$main.html(`
       <div class=''>
         <h1>I think this would be a test</h1>
