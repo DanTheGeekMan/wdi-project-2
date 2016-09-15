@@ -15,18 +15,19 @@
     var startingPoint = {lat: 51.5153485, lng: -0.0746975};
     // var startingPoint = {lat: 51.8910852, lng: -0.4981471};
     let canvas  = document.getElementById('map-canvas');
+    let searchTerm = 'coffee';
 
     this.infowindow = new google.maps.InfoWindow();
     globals.App.createMap(startingPoint, canvas);
-    globals.App.getPlaces(startingPoint);
+    globals.App.getPlaces(startingPoint, searchTerm);
   };
 
-  globals.App.getPlaces= function(startingPoint){
+  globals.App.getPlaces= function(startingPoint, searchTerm){
     var service = new google.maps.places.PlacesService(this.map);
     service.nearbySearch({
       location: startingPoint,
       radius: 1000,
-      keyword: 'coffee'
+      keyword: searchTerm
     }, this.gotPlaces.bind(this));
   };
 
