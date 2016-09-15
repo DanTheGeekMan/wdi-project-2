@@ -16,18 +16,26 @@
     // var startingPoint = {lat: 51.8910852, lng: -0.4981471};
     let canvas  = document.getElementById('map-canvas');
 
-
-
     this.infowindow = new google.maps.InfoWindow();
     globals.App.createMap(startingPoint, canvas);
+    // globals.App.getPlaces(startingPoint);
 
     var service = new google.maps.places.PlacesService(this.map);
     service.nearbySearch({
       location: startingPoint,
       radius: 1000,
       keyword: 'coffee'
-    }, this.callback.bind(this));
+    }, this.gotPlaces.bind(this));
   };
+
+  // globals.App.getPlaces= function(startingPoint){
+  //   var service = new google.maps.places.PlacesService(this.map);
+  //   service.nearbySearch({
+  //     location: startingPoint,
+  //     radius: 1000,
+  //     keyword: 'coffee'
+  //   }, this.gotPlaces.bind(this));
+  // };
 
   globals.App.createMap = function(startingPoint, canvas) {
   this.map = new google.maps.Map(canvas, {
@@ -60,7 +68,7 @@
   });
 };
 
-  globals.App.callback = function(results, status) {
+  globals.App.gotPlaces = function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
         this.createMarker(results[i]);
