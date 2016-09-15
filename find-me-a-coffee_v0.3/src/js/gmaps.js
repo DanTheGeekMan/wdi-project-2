@@ -6,18 +6,16 @@
   globals.App.initMap = function() {
     // Logos
     const costaLogo   = `http://forgeshopping.com/userfiles/images/stores/food-drink/cost-logo.png`;
-
     // Markers
     const costaMarker = 'http://www.costa.co.uk/img/store_locator/pins/costa_shadow.png';
-
-
-    $('.location').on('click', this.getCurrentLocation.bind(this));
     var startingPoint = {lat: 51.5153485, lng: -0.0746975};
     // var startingPoint = {lat: 51.8910852, lng: -0.4981471};
     let canvas  = document.getElementById('map-canvas');
     let searchTerm = 'coffee';
-
     this.infowindow = new google.maps.InfoWindow();
+    // Event handlers
+    $('.location').on('click', this.getCurrentLocation.bind(this));
+    // Function calls.
     globals.App.createMap(startingPoint, canvas);
     globals.App.getPlaces(startingPoint, searchTerm);
   };
@@ -46,12 +44,19 @@
   };
 
   globals.App.gotPlaces = function(results, status) {
+    let coffeeShops = [];
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
+        coffeeShops.push(results[i]);
         this.createMarker(results[i]);
+        console.log(results[i]);
       }
     }
   };
+
+globals.App.markerStatus = function(status) {
+  let markerStatus = true;
+};
 
   globals.App.createMarker = function(place) {
     var placeLoc = place.geometry.location;
@@ -75,13 +80,11 @@
         } else {
           openStatus = 'Now closed';
         }
-
         globals.App.infowindow.setContent(`<div><h3>${shop.name}</h3><br>
           <h4>${openStatus}</h4><br>
           ${shop.reviews[0].author_name} says<br>\"${shop.reviews[0].text}\"<br><br>
           ${shop.formatted_address}<br>
           ${shop.formatted_phone_number}<br>
-
           <a href="${shop.website}">Website</a></div>`);
           globals.App.infowindow.open(globals.App.map, marker);
         });
@@ -100,7 +103,6 @@
             scaledSize: new google.maps.Size(56, 56)
           }
         });
-
         globals.App.map.setCenter(marker.getPosition());
       });
     };
