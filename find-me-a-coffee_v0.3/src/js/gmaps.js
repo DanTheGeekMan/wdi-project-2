@@ -49,14 +49,10 @@
       for (var i = 0; i < results.length; i++) {
         coffeeShops.push(results[i]);
         this.createMarker(results[i]);
-        console.log(results[i]);
       }
+      console.log(results);
     }
   };
-
-globals.App.markerStatus = function(status) {
-  let markerStatus = true;
-};
 
   globals.App.createMarker = function(place) {
     var placeLoc = place.geometry.location;
