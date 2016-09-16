@@ -62,7 +62,7 @@
     });
     globals.App.infoWindow(marker, place);
   };
-
+  
   globals.App.infoWindow = function(marker, place) {
   google.maps.event.addListener(marker, 'click', () => {
     let url = `http://localhost:3000/api/coffee/${place.place_id}`;
