@@ -56,13 +56,13 @@
       map: globals.App.map,
       position: place.geometry.location,
       icon: {
-        url: '../images/8106_new_new.png',
+        url: '../images/8106.png',
         scaledSize: new google.maps.Size(30, 30)
       }
     });
     globals.App.infoWindow(marker, place);
   };
-  
+
   globals.App.infoWindow = function(marker, place) {
   google.maps.event.addListener(marker, 'click', () => {
     let url = `http://localhost:3000/api/coffee/${place.place_id}`;

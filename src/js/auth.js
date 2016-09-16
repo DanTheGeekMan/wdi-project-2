@@ -53,7 +53,7 @@
           <div class="form-group">
             <input class="form-control" type="password" name="user[passwordConfirmation]" placeholder="Password Confirmation">
           </div>
-          <input class="btn btn-primary" type="submit" value="Register">
+          <input class="btn btn-secondary" type="submit" value="Register">
         </form>
       </div>
     `);
@@ -71,7 +71,7 @@
           <div class="form-group">
             <input class="form-control" type="password" name="password" placeholder="Password">
           </div>
-          <input class="btn btn-primary" type="submit" value="Login">
+          <input class="btn btn-secondary" type="submit" value="Login">
         </form>
       </div>
     `);
