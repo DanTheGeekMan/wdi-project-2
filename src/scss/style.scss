@@ -1,3 +1,13 @@
+
+$white: #F9F8F8;
+$camel: #B59A5F;
+$grey:  #7A918D;
+$green: #357266;
+$dark:  #2c3130;
+
+$main-font: 'Montserrat', sans-serif;
+$bold-font: 'Montserrat', sans-serif, bold;
+
 html, body {
   margin: 0;
 }
@@ -20,3 +30,43 @@ ul
 #navbar {
   margin-bottom: 10px;
 }
+// button {
+//   background-color: $dark;
+//   color: $white;
+//   border: none;
+//   font-family: $main-font;
+//   text-transform: uppercase;
+//   font-size: 15px;
+//   margin: 10px;
+// }
+//
+// #over_map button.btn-secondary {
+//   background-color: $dark;
+//   color: $white;
+//   border: none;
+//   font-family: $main-font;
+//   text-transform: uppercase;
+//   font-size: 15px;
+//   margin: 10px;
+//   :active {
+//     background-color: $dark;
+//     color: $white;
+//     border: none;
+//     font-family: $main-font;
+//     text-transform: uppercase;
+//     font-size: 15px;
+//     margin: 10px;
+//   }
+// }
+//
+// #over_map button.btn-secondary:focus, #over_map button.btn-secondary.focus {
+//   color: green;
+//   background-color: pink;
+//   border-color: pink;
+// }
+//
+// button{
+//   :active {
+//     background-color: $dark;
+//   }
+// }
